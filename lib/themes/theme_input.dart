@@ -6,5 +6,9 @@ class ThemeInput {
     fillColor: AppColors.white,
     filled: true,
     border: OutlineInputBorder(),
+    hintStyle: TextStyle(
+      color: AppColors.grey,
+    ),
+    iconColor: AppColors.grey,
   );
 }

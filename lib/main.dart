@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ThemeColor.colorScheme,
         inputDecorationTheme: ThemeInput.inputDecoration,
+        textTheme: const TextTheme(),
       ),
       home: const HomePage(),
     );

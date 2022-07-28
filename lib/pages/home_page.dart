@@ -18,7 +18,10 @@ class HomePage extends StatelessWidget {
               height: 32,
             ),
             TextFormField(
-              decoration: const InputDecoration(hintText: 'test the hint'),
+              decoration: const InputDecoration(
+                hintText: 'test the hint',
+                prefixIcon: Icon(Icons.search),
+              ),
             ),
           ],
         ),
