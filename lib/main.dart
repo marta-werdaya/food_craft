@@ -4,6 +4,8 @@ import 'package:food_craft/themes/theme_button.dart';
 import 'package:food_craft/themes/theme_color.dart';
 import 'package:food_craft/themes/theme_input.dart';
 
+import 'constants/app_colors.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,6 +24,9 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ThemeButton.elevatedButton,
         textButtonTheme: ThemeButton.textButton,
         outlinedButtonTheme: ThemeButton.outlinedButton,
+        scaffoldBackgroundColor: AppColors.bg,
+        shadowColor: AppColors.primary,
+        errorColor: AppColors.error,
       ),
       home: const HomePage(),
     );
