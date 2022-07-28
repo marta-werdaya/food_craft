@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_craft/pages/home_page.dart';
+import 'package:food_craft/themes/theme_button.dart';
 import 'package:food_craft/themes/theme_color.dart';
 import 'package:food_craft/themes/theme_input.dart';
 
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ThemeColor.colorScheme,
         inputDecorationTheme: ThemeInput.inputDecoration,
         textTheme: const TextTheme(),
+        elevatedButtonTheme: ThemeButton.elevatedButton,
+        textButtonTheme: ThemeButton.textButton,
+        outlinedButtonTheme: ThemeButton.outlinedButton,
       ),
       home: const HomePage(),
     );

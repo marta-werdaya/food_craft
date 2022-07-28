@@ -13,16 +13,14 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
         child: Column(
           children: [
-            TextFormField(),
-            const SizedBox(
-              height: 32,
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Indonesian'),
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                hintText: 'test the hint',
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
+            OutlinedButton(
+              onPressed: () {},
+              child: const Text('Balinese'),
+            )
           ],
         ),
       ),
