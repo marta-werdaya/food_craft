@@ -3,6 +3,7 @@ import 'package:food_craft/pages/home_page.dart';
 import 'package:food_craft/themes/theme_button.dart';
 import 'package:food_craft/themes/theme_color.dart';
 import 'package:food_craft/themes/theme_input.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'constants/app_colors.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ThemeColor.colorScheme,
         inputDecorationTheme: ThemeInput.inputDecoration,
-        textTheme: const TextTheme(),
+        textTheme: GoogleFonts.poppinsTextTheme(),
         elevatedButtonTheme: ThemeButton.elevatedButton,
         textButtonTheme: ThemeButton.textButton,
         outlinedButtonTheme: ThemeButton.outlinedButton,
