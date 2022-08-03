@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
 class TitleWidget extends StatelessWidget {
+  final String title;
   const TitleWidget({
+    required this.title,
     Key? key,
   }) : super(key: key);
 
@@ -13,16 +15,16 @@ class TitleWidget extends StatelessWidget {
       padding: const EdgeInsets.only(left: 18, right: 18, bottom: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
+        children: [
           Text(
-            'Promo',
-            style: TextStyle(
+            title,
+            style: const TextStyle(
               color: AppColors.primary,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(
+          const Text(
             'See All',
             style: TextStyle(
               color: AppColors.secondary,

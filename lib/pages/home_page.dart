@@ -14,14 +14,107 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          children: const [
-            BrandLogo(),
-            SearchWidget(),
-            CategoryButton(),
-            TitleWidget(),
-            PromoBanner()
+          children: [
+            const BrandLogo(),
+            const SearchWidget(),
+            const CategoryButton(),
+            const TitleWidget(title: 'Promo'),
+            const PromoBanner(),
+            const TitleWidget(title: '🔥 Hot Menu This Week'),
+            Padding(
+              padding: const EdgeInsets.only(left: 18, right: 18, bottom: 32),
+              child: Wrap(
+                spacing: 18,
+                runSpacing: 24,
+                children: const [
+                  ProductItem(),
+                  ProductItem(),
+                  ProductItem(),
+                  ProductItem(),
+                  ProductItem(),
+                ],
+              ),
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class ProductItem extends StatelessWidget {
+  const ProductItem({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 168,
+      decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(4),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.primary.withOpacity(0.25),
+              spreadRadius: 0,
+              blurRadius: 12,
+            )
+          ]),
+      child: Column(
+        children: [
+          Stack(
+            alignment: Alignment.topRight,
+            children: [
+              Image.asset('assets/images/pizza.png'),
+              const Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Icon(
+                  Icons.favorite_border,
+                  color: AppColors.bg,
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                const Text('Hawaiian Chicken PizzaSmoked'),
+                const SizedBox(
+                  height: 12,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: const [
+                        Icon(
+                          Icons.attach_money,
+                          color: AppColors.secondary,
+                          size: 20,
+                        ),
+                        Text('20.00'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/icons/star.png',
+                          width: 14,
+                        ),
+                        const SizedBox(
+                          width: 4,
+                        ),
+                        const Text('20.00'),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
@@ -35,7 +128,7 @@ class PromoBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18),
+      padding: const EdgeInsets.only(left: 18, right: 18, bottom: 32),
       child: SizedBox(
         child: Stack(
           alignment: Alignment.centerLeft,
