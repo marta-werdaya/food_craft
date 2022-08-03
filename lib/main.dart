@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_craft/pages/home_page.dart';
+import 'package:food_craft/pages/custom_bottom_navigation.dart';
 import 'package:food_craft/themes/theme_button.dart';
 import 'package:food_craft/themes/theme_color.dart';
 import 'package:food_craft/themes/theme_input.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         shadowColor: AppColors.primary,
         errorColor: AppColors.error,
       ),
-      home: const HomePage(),
+      home: const CustomBottomNavigation(),
     );
   }
 }
