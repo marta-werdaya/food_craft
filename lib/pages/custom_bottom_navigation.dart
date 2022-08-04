@@ -45,9 +45,9 @@ class _BottomNavigationBarState extends State<CustomBottomNavigation> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: IconDisplay(path: AppAssets.iconWistlist),
-            activeIcon: IconDisplay(path: AppAssets.iconWistlistActive),
-            label: 'Wistlist',
+            icon: IconDisplay(path: AppAssets.iconWishlist),
+            activeIcon: IconDisplay(path: AppAssets.iconWishlistActive),
+            label: 'Wishlist',
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(path: AppAssets.iconNotification),
