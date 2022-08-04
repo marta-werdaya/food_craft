@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:food_craft/widgets/total_item_widget.dart';
 
 import '../constants/app_colors.dart';
 
 class ListItem extends StatelessWidget {
+  final bool isCart;
   const ListItem({
     Key? key,
+    this.isCart = false,
   }) : super(key: key);
 
   @override
@@ -46,10 +49,12 @@ class ListItem extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('checkout'),
-                )
+                isCart
+                    ? const TotalItemWidget()
+                    : ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('checkout'),
+                      )
               ],
             ),
           ),

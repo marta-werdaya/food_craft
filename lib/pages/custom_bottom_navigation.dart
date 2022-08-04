@@ -20,8 +20,8 @@ int currentIndex = 0;
 List pages = [
   const HomePage(),
   const WishList(),
-  const CartPage(),
   const NotificationPage(),
+  const CartPage(),
 ];
 
 class _BottomNavigationBarState extends State<CustomBottomNavigation> {
