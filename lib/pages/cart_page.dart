@@ -21,19 +21,87 @@ class CartPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18),
           child: Column(
-            children: const [
-              ListItem(
+            children: [
+              const ListItem(
                 isCart: true,
               ),
-              ListItem(
+              const ListItem(
                 isCart: true,
               ),
-              ListItem(
-                isCart: true,
+              const SizedBox(
+                height: 16,
               ),
+              const OrderDetail(
+                name: 'Total Item (4)',
+                value: '\$ 9.20',
+              ),
+              const OrderDetail(
+                name: 'Delivery fee',
+                value: '\$ 2.00',
+              ),
+              const Divider(
+                height: 2,
+                thickness: 0.5,
+                color: AppColors.grey,
+              ),
+              const SizedBox(height: 16),
+              const OrderDetail(
+                name: 'Total',
+                value: '\$ 11.20',
+              ),
+              SizedBox(
+                height: 58,
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Checkout',
+                    style: TextStyle(
+                      color: AppColors.bg,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class OrderDetail extends StatelessWidget {
+  final String name;
+  final String value;
+  const OrderDetail({
+    Key? key,
+    required this.name,
+    required this.value,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            name,
+            style: const TextStyle(
+              color: AppColors.grey,
+            ),
+          ),
+          Text(
+            value,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              color: AppColors.primary,
+            ),
+          ),
+        ],
       ),
     );
   }
