@@ -12,4 +12,5 @@ class AppColors {
   static const Color success = Color(0xff2BEA9A);
   static const Color info = Color(0xff2BBCEA);
   static const Color warning = Color(0xffEAB42B);
+  static const Color transparent = Colors.transparent;
 }

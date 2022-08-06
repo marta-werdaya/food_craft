@@ -4,8 +4,10 @@ import '../constants/app_colors.dart';
 
 class TitleWidget extends StatelessWidget {
   final String title;
+  final bool isSeeAll;
   const TitleWidget({
     required this.title,
+    this.isSeeAll = true,
     Key? key,
   }) : super(key: key);
 
@@ -24,13 +26,15 @@ class TitleWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const Text(
-            'See All',
-            style: TextStyle(
-              color: AppColors.secondary,
-              fontSize: 13,
-            ),
-          ),
+          isSeeAll
+              ? const Text(
+                  'See All',
+                  style: TextStyle(
+                    color: AppColors.secondary,
+                    fontSize: 13,
+                  ),
+                )
+              : Container(),
         ],
       ),
     );
