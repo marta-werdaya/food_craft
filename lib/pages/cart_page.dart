@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_craft/data/k_test_cart.dart';
+import 'package:food_craft/widgets/list_item.dart';
 
 import '../constants/app_colors.dart';
-import '../widgets/list_item.dart';
 import '../widgets/text_app_bar.dart';
 
 class CartPage extends StatelessWidget {
@@ -9,6 +10,7 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cartAll = kTestCart;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.bg,
@@ -22,12 +24,18 @@ class CartPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 18),
           child: Column(
             children: [
-              const ListItem(
-                isCart: true,
-              ),
-              const ListItem(
-                isCart: true,
-              ),
+              for (int i = 0; i < cartAll.length; i++)
+                ListItem(
+                  isCart: true,
+                  idFood: cartAll[i].id,
+                ),
+              // const ListItem(
+              //   isCart: true,
+              // ),
+              // const ListItem(
+              //   isCart: true,
+
+              // ),
               const SizedBox(
                 height: 16,
               ),

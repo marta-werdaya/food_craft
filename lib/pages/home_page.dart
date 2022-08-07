@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                 spacing: 18,
                 runSpacing: 24,
                 children: [
-                  for (int i = 1; i < foods.length; i++)
+                  for (int i = 0; i < foods.length; i++)
                     ProductItem(
                       foods: foods[i],
                     )

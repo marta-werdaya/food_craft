@@ -11,11 +11,11 @@ class DividerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.only(top: 24, bottom: 32),
+        margin: const EdgeInsets.only(top: 16, bottom: 32),
         height: 4,
         width: 70,
         decoration: BoxDecoration(
-          color: AppColors.primary,
+          color: AppColors.grey,
           borderRadius: BorderRadius.circular(10),
         ),
       ),
