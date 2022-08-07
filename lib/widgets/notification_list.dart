@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:food_craft/model/notification_model.dart';
 
 import '../constants/app_colors.dart';
 
 class NotificationList extends StatelessWidget {
+  final NotificationModel notif;
   const NotificationList({
     Key? key,
+    required this.notif,
   }) : super(key: key);
 
   @override
@@ -18,20 +21,20 @@ class NotificationList extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
-            'Update System',
-            style: TextStyle(
+            notif.title,
+            style: const TextStyle(
               color: AppColors.primary,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(
-            'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. ',
-            style: TextStyle(
+            notif.desc,
+            style: const TextStyle(
               color: AppColors.black,
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_craft/data/k_test_notification.dart';
 
 import '../constants/app_colors.dart';
 import '../widgets/date_text.dart';
@@ -10,6 +11,7 @@ class NotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var notifications = kTestNotification;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.bg,
@@ -22,13 +24,17 @@ class NotificationPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18),
           child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                DateText(),
-                NotificationList(),
-                NotificationList(),
-                NotificationList(),
-              ]),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const DateText(
+                date: '12 Juli 2022',
+              ),
+              for (int i = 0; i < notifications.length; i++)
+                NotificationList(
+                  notif: notifications[i],
+                ),
+            ],
+          ),
         ),
       ),
     );
