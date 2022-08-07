@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
 class ImageBanner extends StatelessWidget {
-  const ImageBanner({
-    Key? key,
-  }) : super(key: key);
+  final String imageUrl;
+  const ImageBanner({Key? key, required this.imageUrl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('assets/images/pizza.png'),
+        Image.asset(imageUrl),
         Container(
           width: double.infinity,
           height: 310,

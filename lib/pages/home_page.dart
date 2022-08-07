@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_craft/data/k_test_food.dart';
+import 'package:food_craft/widgets/product_item.dart';
 
 import '../widgets/brand_logo.dart';
 import '../widgets/category_widget.dart';
-import '../widgets/product_item.dart';
 import '../widgets/promo_banner.dart';
 import '../widgets/search_widget.dart';
 import '../widgets/title_widget.dart';
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var foods = kTestFoods;
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -27,12 +29,11 @@ class HomePage extends StatelessWidget {
               child: Wrap(
                 spacing: 18,
                 runSpacing: 24,
-                children: const [
-                  ProductItem(),
-                  ProductItem(),
-                  ProductItem(),
-                  ProductItem(),
-                  ProductItem(),
+                children: [
+                  for (int i = 1; i < foods.length; i++)
+                    ProductItem(
+                      foods: foods[i],
+                    )
                 ],
               ),
             ),

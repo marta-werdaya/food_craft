@@ -24,8 +24,9 @@ class ListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            'assets/images/pizza_square.png',
+            'assets/images/pizza.png',
             height: 104,
+            width: 104,
           ),
           SizedBox(
             height: 104,

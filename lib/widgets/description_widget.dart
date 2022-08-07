@@ -4,8 +4,10 @@ import 'package:food_craft/widgets/title_widget.dart';
 import '../constants/app_colors.dart';
 
 class DescriptionWidget extends StatelessWidget {
+  final String text;
   const DescriptionWidget({
     Key? key,
+    required this.text,
   }) : super(key: key);
 
   @override

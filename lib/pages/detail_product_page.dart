@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_craft/constants/app_assets.dart';
 import 'package:food_craft/constants/app_colors.dart';
+import 'package:food_craft/model/food_model.dart';
 import 'package:food_craft/widgets/custom_icon_button.dart';
 import 'package:food_craft/widgets/total_item_widget.dart';
 
@@ -13,7 +14,11 @@ import '../widgets/text_icon_widget.dart';
 import '../widgets/title_product_widget.dart';
 
 class DetailProductPage extends StatelessWidget {
-  const DetailProductPage({Key? key}) : super(key: key);
+  final FoodModel food;
+  const DetailProductPage({
+    Key? key,
+    required this.food,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,41 +39,50 @@ class DetailProductPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const ImageBanner(),
+            ImageBanner(
+              imageUrl: food.imageUrl,
+            ),
             Container(
               color: AppColors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const DividerWidget(),
-                  const TitleProductWidget(),
+                  TitleProductWidget(
+                    foodName: food.name,
+                    seller: food.seller,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       TextIconWidget(
-                        text: '4.5/5',
+                        text: '${food.rating}/5',
                         icon: AppAssets.iconStar,
                       ),
                       TextIconWidget(
-                        text: '2.1 Km',
+                        text: '${food.location} Km',
                         icon: AppAssets.iconLocation,
                       ),
                       TextIconWidget(
-                        text: '4.5/5',
+                        text: '${food.time} min',
                         icon: AppAssets.iconTime,
                       ),
                     ],
                   ),
-                  const DescriptionWidget(),
+                  DescriptionWidget(
+                    text: food.desc,
+                  ),
                   Padding(
                     padding:
                         const EdgeInsets.only(left: 18, right: 18, bottom: 32),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        PriceWidget(),
-                        TotalItemWidget(),
+                      children: [
+                        PriceWidget(
+                          price: food.price,
+                        ),
+                        const TotalItemWidget(),
                       ],
                     ),
                   ),
