@@ -83,12 +83,11 @@ class ListItem extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: AppColors.error50,
-              borderRadius: BorderRadius.circular(4),
+          TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: AppColors.error50,
             ),
-            padding: const EdgeInsets.all(8),
+            onPressed: () {},
             child: const Icon(
               Icons.delete_outline,
               color: AppColors.error,
