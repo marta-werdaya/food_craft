@@ -8,15 +8,18 @@ import '../pages/detail_product_page.dart';
 class ListItem extends StatelessWidget {
   final bool isCart;
   final int idFood;
+  final int total;
   const ListItem({
     Key? key,
     required this.idFood,
     this.isCart = false,
+    this.total = 0,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final food = kTestFoods.firstWhere((food) => food.id == idFood);
+
     return Container(
       padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.only(bottom: 16),
@@ -76,6 +79,7 @@ class ListItem extends StatelessWidget {
                   isCart
                       ? TotalItemWidget(
                           id: food.id,
+                          total: total,
                         )
                       : ElevatedButton(
                           onPressed: () {},

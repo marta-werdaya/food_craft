@@ -28,6 +28,7 @@ class CartPage extends StatelessWidget {
                 ListItem(
                   isCart: true,
                   idFood: cartAll[i].id,
+                  total: cartAll[i].totalItem,
                 ),
               const SizedBox(
                 height: 16,

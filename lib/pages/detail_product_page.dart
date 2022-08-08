@@ -5,6 +5,7 @@ import 'package:food_craft/model/food_model.dart';
 import 'package:food_craft/widgets/custom_icon_button.dart';
 import 'package:food_craft/widgets/total_item_widget.dart';
 
+import '../data/k_test_cart.dart';
 import '../widgets/description_widget.dart';
 import '../widgets/divider_widget.dart';
 import '../widgets/image_banner.dart';
@@ -22,6 +23,8 @@ class DetailProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cart = kTestCart.firstWhere((item) => item.id == food.id);
+
     return Scaffold(
       backgroundColor: AppColors.white,
       extendBodyBehindAppBar: true,
@@ -84,6 +87,7 @@ class DetailProductPage extends StatelessWidget {
                         ),
                         TotalItemWidget(
                           id: food.id,
+                          total: cart.totalItem,
                         ),
                       ],
                     ),
