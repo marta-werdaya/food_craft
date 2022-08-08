@@ -82,7 +82,9 @@ class DetailProductPage extends StatelessWidget {
                         PriceWidget(
                           price: food.price,
                         ),
-                        const TotalItemWidget(),
+                        TotalItemWidget(
+                          id: food.id,
+                        ),
                       ],
                     ),
                   ),

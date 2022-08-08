@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:food_craft/widgets/icon_display.dart';
 
+import '../data/k_test_cart.dart';
+
 class TotalItemWidget extends StatefulWidget {
+  final id;
   const TotalItemWidget({
     Key? key,
+    required this.id,
   }) : super(key: key);
 
   @override
@@ -15,6 +19,8 @@ int amount = 0;
 class _TotalItemWidgetState extends State<TotalItemWidget> {
   @override
   Widget build(BuildContext context) {
+    final cartInfo = kTestCart.firstWhere((element) => element.id == widget.id);
+
     return SizedBox(
       width: 104,
       child: Row(
@@ -30,7 +36,7 @@ class _TotalItemWidgetState extends State<TotalItemWidget> {
               },
               child: const IconDisplay(path: 'assets/icons/minus.png')),
           Text(
-            amount.toString(),
+            cartInfo.totalItem.toString(),
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,

@@ -74,7 +74,9 @@ class ListItem extends StatelessWidget {
                   ),
                   const Spacer(),
                   isCart
-                      ? const TotalItemWidget()
+                      ? TotalItemWidget(
+                          id: food.id,
+                        )
                       : ElevatedButton(
                           onPressed: () {},
                           child: const Text('checkout'),

@@ -1,4 +1,8 @@
 class CartModel {
   final int id;
-  const CartModel({required this.id});
+  final int totalItem;
+  const CartModel({
+    required this.id,
+    required this.totalItem,
+  });
 }
