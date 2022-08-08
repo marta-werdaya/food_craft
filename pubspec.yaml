@@ -14,11 +14,21 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
-  flutter_launcher_icons: ^0.9.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.3
+  flutter_native_splash: ^2.2.7
+
+flutter_native_splash:
+  color: "003566"
+  image: "assets/images/logo_foodCraft.png"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo_foodCraft.png"
 
   flutter_lints: ^2.0.0
 
